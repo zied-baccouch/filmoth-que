@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>8 mile</title>
+    <style>
+        body { font-family: Garamond, serif; }
+        .container { margin: 0 auto; max-width: 800px; }
+        .header, .footer { text-align: center; }
+        .content { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>8 mile</h1>
+        </div>
+        <div class="content">
+            <p>A Detroit, en 1995, Jimmy Smith Jr. a des rêves plein la tête, mais il lui manque encore les mots pour les exprimer. Sa vie d&#039;adolescent se déroule entre banlieue blanche et quartiers noirs, le long de cette ligne de démarcation que l&#039;on nomme 8 Mile Road</p>
+            <!-- Ajoutez plus de détails si nécessaire -->
+        </div>
+        <div class="footer">
+            <p>&copy; 2024</p>
+        </div>
+    </div>
+</body>
+</html>

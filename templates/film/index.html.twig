@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gestion Filmothèque{% endblock %}
+
+{% block body %}
+    <h1>Films</h1>
+
+    {% for film in films %}
+        <a href="{{ path('app_film_show', {'id': film.id}) }}">
+            <img src="{{ asset('images/' ~ film.couverture) }}" alt="{{ film.titre }}" width="15%">
+        </a>
+    {% endfor %}
+
+    <br><br>
+    <div>
+        <a href="{{ path('app_film_new') }}">Créer un nouveau film</a>
+    </div>
+    <div>
+        <a href="{{ path('app_film_pdf_all') }}">Télécharger la liste des films au format PDF</a>
+    </div>
+    <div>
+        <a href="{{ path('app_film_search') }}">Recherche de films</a>
+    </div>
+{% endblock %}

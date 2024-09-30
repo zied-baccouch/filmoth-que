@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Films</title>
+    <style>
+        /* Ajoutez votre style CSS ici */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Liste des Films</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Titre</th>
+                <th>Date de sortie</th>
+                <th>Description</th>
+                <!-- Ajoutez d'autres colonnes si nécessaire -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for film in films %}
+            <tr>
+                <td>{{ film.titre }}</td>
+                <td>{{ film.dateSortie ? film.dateSortie|date('Y-m-d') : '' }}</td>
+                <td>{{ film.description }}</td>
+                <!-- Ajoutez d'autres données si nécessaire -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

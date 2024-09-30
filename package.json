@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@symfony/stimulus-bridge": "^3.2.2",
+    "chart.js": "^4.4.3"
+  }
+}

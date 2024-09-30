@@ -3,3 +3,33 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+
+app_film_pdf:
+    path: /pdf/all
+    controller: App\Controller\FilmController::generatePdfAllFilms
+    methods: ['GET']
+app_acteur_pdf:
+    path: /pdf/Acteur
+    controller: App\Controller\ActeurController::generatePdfAllFilms
+    methods: ['GET']
+app_adherent_pdf:
+    path: /pdf/Adherent
+    controller: App\Controller\AdherentController::generatePdfAllFilms
+    methods: ['GET']
+app_film_index:
+    path: /film
+    controller: App\Controller\FilmController::index
+    methods: ['GET']
+app_film_search:
+    path: /search
+    controller: App\Controller\FilmController::search
+    methods: ['GET', 'POST']
+
+app_homepage:
+    path: /
+    controller: App\Controller\DefaultController::login
+
+app_film_stats:
+    path: /stats
+    controller: App\Controller\FilmController::statistiques  # Update this line
+    methods: ['GET', 'POST']

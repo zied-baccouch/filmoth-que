@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Recherche de films{% endblock %}
+
+{% block body %}
+    <h1>Recherche de films</h1>
+
+    {{ form_start(form) }}
+        {{ form_row(form.titre) }}
+        {{ form_row(form.acteur) }}
+        {{ form_row(form.categorie) }}
+        <button type="submit">Rechercher</button>
+    {{ form_end(form) }}
+
+    {% if films is not empty %}
+        <h2>Résultats de la recherche :</h2>
+        <ul>
+            {% for film in films %}
+                <li>
+                    <a href="{{ path('app_film_show', {'id': film.id}) }}">{{ film.titre }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Aucun résultat trouvé.</p>
+    {% endif %}
+{% endblock %}

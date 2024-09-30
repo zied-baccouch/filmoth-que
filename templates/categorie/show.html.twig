@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Show Categorie{% endblock %}
+
+{% block body %}
+    <h1>{{ categorie.designCategorie }}</h1>
+
+    <h2>Films associés :</h2>
+    <ul>
+        {% for film in films %}
+            <li>
+                <a href="{{ path('app_film_show', {'id': film.id}) }}">
+                    <img src="{{ asset('images/' ~ film.couverture) }}" alt="{{ film.titre }}" width="15%">
+                </a>
+                
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

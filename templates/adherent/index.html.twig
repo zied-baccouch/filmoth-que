@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Adherent index{% endblock %}
+
+{% block body %}
+    <h1>Adherent index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Date_naissance</th>
+                <th>Sexe</th>
+                <th>Tel</th>
+                <th>Adresse</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for adherent in adherents %}
+            <tr>
+                <td>{{ adherent.id }}</td>
+                <td>{{ adherent.nom }}</td>
+                <td>{{ adherent.prenom }}</td>
+                <td>{{ adherent.dateNaissance ? adherent.dateNaissance|date('Y-m-d') : '' }}</td>
+                <td>{{ adherent.sexe }}</td>
+                <td>{{ adherent.tel }}</td>
+                <td>{{ adherent.adresse }}</td>
+                <td>{{ adherent.createdAt ? adherent.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ adherent.updatedAt ? adherent.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_adherent_show', {'id': adherent.id}) }}">show</a>
+                    <a href="{{ path('app_adherent_edit', {'id': adherent.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="10">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_adherent_new') }}">Create new</a>
+    <br>
+    <br>
+    <a href="{{ path('app_adherent_pdf') }}">Adherent En PDF</a>
+{% endblock %}
